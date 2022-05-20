@@ -1,0 +1,20 @@
+# Editar arquivo de configuração
+ctrl+shift+f2
+
+# Abrir URL no navegador
+ctrl+shift+e
+
+# Colar texto selecionado
+ctrl+shift+s
+
+# Inserir caracter unicode
+ctrl+shift+u
+
+# Reiniciar terminal
+ctrl+shift+delete
+
+# Recarregar arquivo de configuração
+ctrl+shift+f5
+
+# Selecionar tema
+$ kitty +kitten themes
