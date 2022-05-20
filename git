@@ -1,0 +1,44 @@
+# CRIAR TOKEN DE ACESSO:
+* Github site > Settings > Developer settings > Personal access tokens
+* O token substitui a senha de acesso
+
+# Corrigir commit
+git commit --amend
+
+# Adicionar arquivo a um commit
+git commit --amend --no-edit
+
+# Adicionar arquivo e mudar a mensagem do commit
+git commit --amend -m "Nova mensagem de commit"
+
+# Desfazer um commit
+
+# soft: mantém as alterações nos arquivos
+git reset --soft HEAD^
+
+# hard: elimina as alterações feitas
+git reset --hard HEAD^
+
+# Reverter:
+# mantém as mundanças, mas comita voltando a determinado ponto
+# Ex: apaguei um arquivo num repositório público,
+# não posso apagar o commit feito, devo comitar a reversão
+# para o ponto onde o arquivo existia
+
+# Volta ao ponto anterior
+git revert HEAD
+
+# Voltando para este ponto
+git revert HEAD~"<quantos-commits>"
+
+# Modificar mensagem de commit de um commit antigo
+git rebase -i "<id-do-commit>"
+
+# Esconder temporariamente os arquivos alterados
+git stash
+
+# Listar os arquivos temporariamente escondidos
+git stash show
+
+# Devolver os arquivos temporariamente escondidos
+git stash apply
