@@ -1,0 +1,20 @@
+# Instalar pacote
+$ yay -S pacote
+
+# Remover pacote
+$ yay -Rns pacote
+
+# Exibir menu de seleção
+$ yay <Termo de Busca>
+
+# Atualizar todos os pacotes instalados
+$ yay -Syu
+
+# Atualizar incluindo pacotes de desenvolvimento
+$ yay -Syu --devel --timeupdate
+
+# Limpar depedências desnecessárias
+$ yay -Yc
+
+# Exibir estatíscas do sistema
+$ yay -Ps
