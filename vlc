@@ -1,0 +1,7 @@
+# Aumentar o buffer de streaming
+
+## Alteração permanente do buffer do VLC
+Ferramentas > Preferências(ctrl+p) > Detalhado > Saída de transmissão > Cache com combinador de saída e transmissão
+
+## Alterar buffer por transmissão
+Mídia > Abrir Transmissão de Rede(ctrl+n) > Exibir mais opções > Cache
