@@ -1,0 +1,2 @@
+# Criar disco de inicialização
+sudo dd bs=4M if=distro.iso of=/dev/sdb status=progress oflag=sync
