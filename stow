@@ -1,0 +1,2 @@
+# Do diretório dotfiles, vincula na HOME o diretório app
+stow -vt ~ app
