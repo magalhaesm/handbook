@@ -1,0 +1,2 @@
+# Lista os pacotes instalados
+sudo apt list --installed
