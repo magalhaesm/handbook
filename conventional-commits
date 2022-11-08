@@ -1,0 +1,9 @@
+build: alterações que afetam o sistema de compilação ou dependências externas (escopos de exemplo: gulp, broccoli, npm)
+ci: alterações em arquivos e scripts de configuração de CI (escopos de exemplo: Travis, Circle, BrowserStack, SauceLabs)
+docs: somente a documentação muda
+feat: uma nova funcionalidade
+fix: uma correção de bug
+perf: uma alteração de código que melhora o desempenho
+refactor: uma alteração de código que não corrige um bug nem adiciona um recurso
+style: alterações que não afetam o significado do código (espaço em branco, formatação, falta de ponto e vírgula, etc)
+test: adiciona testes ausentes ou corrige testes existentes
