@@ -1,9 +1,15 @@
-# Compilação para depuração
-# Mantém identificadores e símbolos
-gcc -Wall -g program.c
+# Manual
+info gdb
 
-# Argumentos por linha de comando
-gdb --args a.out arg1 arg2
+# Variáveis no escopo local
+info locals
+info variables    # variáveis declaradas fora do escopo atual
+info functions    # nomes e tipos de dados de todas as funções definidas
+info b            # lista todos dos breakpoints
+
+# Compilação para depuração
+gcc -Wall -g program.c      # Mantém identificadores e símbolos
+gdb --args a.out arg1 arg2  # Argumentos por linha de comando
 
 # Atualizar a tela: (ou CTRL+l)
 refresh
@@ -20,6 +26,10 @@ break POINT
 
 # Apagar breakpoint
 clear POINT
+delete POINT
+
+# Apagar todos os breakpoints
+delete
 
 # Definir argumentos
 set args arg1
@@ -28,30 +38,45 @@ set args arg1
 # Um backtrace é um resumo de como seu programa chegou onde está.
 backtrace full
 
+# Mover-se pela pilha de chamadas
+up
+down
+
 # Próxima linha: (n para abreviar)
 next
 
 # Continuar: (até o próximo breakpoint)
 continue
 
-# Mostrar o valor de uma variável
+# Mostrar o valor de uma variável sempre que o programa fizer uma parada
+display VARIABLE
+
+# Parar de mostrar o valor de uma variável
+undisplay VARIABLE
+
+# Exibe uma vez o valor de uma variável
 print VARIABLE
 
-# Exibir um array:
+# Exibe um array:
 print *arr@len
 
 # Inspecionar uma variável
-watch VARIABLE
+watch VAR                 # para quando VAR é modificada
+watch -l VAR              # inspeciona o local
+watch VAR if VAR > 10     # inspeção condicional
 
+# Habilitar/desabilitar interface
+tui enable/disable
+ctrl-x + a
+
+# Depurar processo filho
+set follow-fork-mode child
+
+rwatch VAR      # parar que var for lida
 
 # ----------------------------------------------------
 Relevant gdb commands I've gathered over time:
 
-info gdb 					//Manual
-info locals 				        //Vars in local scope
-info variables				//Vars declared outside current scope
-info functions				//Names and datatypes of all defined functions
-info b 						//List all breakpoints
 break funcName				//Set breakpoint at function funcName (short: b funcName)
 break file::line			        //Set breakpoint at line in file
 layout next					//Cycle through the layouts of gdb
@@ -69,14 +94,9 @@ python gdb.execute(cmd)		//Run a gdb command cmd from python prompt
 set print pretty on			//Enable pretty printing
 							  (Put in ~/.gdbinit)
 $ gdb -c core.num			//Examine the dumped core file from a SIGSEGV(shell command)
-bt							//Print backtrace
 break _exit 				        //Breakpoint at exit of program
 whatis expr					//Print datatype of expr
 ptype expr					//Detailed print of datatype of expr
-watch var 					//Stop when var is modified
-watch -l foo				        //Watch foo loaction
-rwatch foo					//Stop when foo is read
-watch foo if foo>10			//Watch foo conditionally
 delete						//Delete all breakpoints
 delete breakpoint_no		        //Delete breakpoint breakpoint_no
 command breakpoint_no		//Run user listed commands when breakpoint is hit
