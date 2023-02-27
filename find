@@ -48,3 +48,6 @@ find . -type f -exec chmod 644 {} \;
 
 # Conta quantas linhas têm todos os arquivos lua no diretório
 find . -type f -name "*.lua" -exec wc -l {} \; | cut -d ' ' -f1 | xargs | tr ' ' '+' | bc
+
+# Mudar permissões de todos os arquivos do tipo ELF
+find . -exec sh -c "file '{}' | grep -q 'ELF'" \; -print | xargs chmod +x
