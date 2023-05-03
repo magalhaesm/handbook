@@ -2,6 +2,9 @@
 * Github site > Settings > Developer settings > Personal access tokens
 * O token substitui a senha de acesso
 
+# Consultar estrelas do repo
+<repo-url>/stargazers
+
 # Corrigir commit
 git commit --amend
 
@@ -33,6 +36,13 @@ git revert HEAD~"<quantos-commits>"
 
 # Modificar mensagem de commit de um commit antigo
 git rebase -i "<id-do-commit>"
+# Mesclar ramificações usando rebase
+git rebase feat/feature main
+
+# Apagar uma ramificação
+git branch -d "nome-da-ramificação"
+# Para forçar
+git branch -D "nome-da-ramificação"
 
 # Esconder temporariamente os arquivos alterados
 git stash
@@ -42,3 +52,36 @@ git stash show
 
 # Devolver os arquivos temporariamente escondidos
 git stash apply
+
+# Adicionar submodule
+git submodule add <url> <directory>
+# Inicializar submodule
+git submodule init
+git submodule update
+
+# Atualize o ramo de desenvolvimento à partir do ramo principal
+# merge master into develop
+git checkout develop
+git merge master
+
+# rebase develop on top of master
+git checkout develop
+git rebase master
+
+# obter branch remota
+git checkout --track origin/branch
+
+# To rename the current branch:
+git branch -m <newname>
+# To rename a branch while pointed to any branch:
+git branch -m <oldname> <newname>
+# -m is short for --move.
+
+# PULL REQUEST
+# Set upstream
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+# Syncing a fork
+git fetch upstream
+git checkout main
+git merge upstream/main
