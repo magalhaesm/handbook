@@ -1,0 +1,3 @@
+echo | gcc -E -xc -include "string.h" - | grep strstr
+
+echo 'int main() { printf("char: %d\\n", (unsigned char)-10); }' | gcc -xc -w - && ./a.out && rm -f a.out
