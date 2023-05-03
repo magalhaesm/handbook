@@ -1,0 +1,2 @@
+# List symbols from object files
+nm -un minishell
