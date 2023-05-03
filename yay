@@ -13,7 +13,7 @@ $ yay -Syu
 # Atualizar incluindo pacotes de desenvolvimento
 $ yay -Syu --devel --timeupdate
 
-# Limpar depedências desnecessárias
+# Limpar dependências desnecessárias
 $ yay -Yc
 
 # Exibir estatíscas do sistema
