@@ -1,0 +1,19 @@
+# Tools that generates a compilation database for clang
+
+## Online
+https://texttoolkit.com/compilation-database-generator
+
+## Bear
+https://github.com/rizsotto/Bear
+
+## scan-build
+https://github.com/rizsotto/scan-build
+
+To run the Clang static analyzer against a project goes like this:
+$ scan-build <your build command>
+
+To generate a compilation database file goes like this:
+$ intercept-build <your build command>
+
+To run the Clang static analyzer against a project with compilation database goes like this:
+$ analyze-build
