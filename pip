@@ -1,3 +1,6 @@
+# Obter pip
+python3 -m pip install --upgrade pip
+
 # Instalação local
 pip install -U pacote
 
