@@ -1,0 +1,2 @@
+# Create module
+go mod init github.com/magalhaesm/[module]
