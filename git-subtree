@@ -1,0 +1,10 @@
+# TRANSFERIR DIRETÓRIO ENTRE REPOS
+
+# 1. Criar Subtree:
+git subtree split --prefix=<diretorio> --branch <nova_branch>
+
+# 2. Adicionar Remote:
+git remote add <nome_remote> <url_repositorio>
+
+# 3. Push para Remote:
+git push <nome_remote> <nova_branch>
