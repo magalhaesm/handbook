@@ -85,3 +85,17 @@ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.gi
 git fetch upstream
 git checkout main
 git merge upstream/main
+
+# SSH CONFIG
+# Gerar uma nova chave SSH
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# Adicionar chave SSH ao ssh-agent
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+# Alterar frase secreta
+ssh-keygen -p -f ~/.ssh/id_ed25519
+
+# Solving id_ed25519.pub is too open
+chmod 400 ~/.ssh/id_ed25519
