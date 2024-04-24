@@ -34,27 +34,33 @@ ctrl-t - Indent the current line
 ctrl-d - Backdent the current line
 
 # delete in insert mode - build edits you can repeat with dot
-• ctrl-h – Delete previous char
-• ctrl-w – Previous word
-• ctrl-u – Entire line (except indent)
+ctrl-h – Delete previous char
+ctrl-w – Previous word
+ctrl-u – Entire line (except indent)
 
 # Replace across multiple files in Vim, without any plugins
-• :args path/*
-• :argdo %s/some/sub/g
-• :argdo update
+:args path/*
+:argdo %s/some/sub/g
+:argdo update
 
 # Show keybindings
-• :filter pattern imap (insert mappings)
-• :filter pattern nmap (normal)
+:filter pattern imap (insert mappings)
+:filter pattern nmap (normal)
 
 # Remove Trailing Whitespace
-• :%s/\s\+$//e
+:%s/\s\+$//e
 
 # Repeat the last substitution in Vim:
-• :& - repeat but reset flags
-• :&& - repeat and keep flags
-• :%& - repeat on file, reset flags
-• :%&& - repeat on file, keep flags
+:& - repeat but reset flags
+:&& - repeat and keep flags
+:%& - repeat on file, reset flags
+:%&& - repeat on file, keep flags
 
 # Cálculos no modo de inserção
-• <Ctrl-r> =
+<Ctrl-r>=
+
+# Edit and execute command
+<Ctrl-x><Ctrl-e>
+
+# Execute the macro 'a' for all items in quickfix list
+:cdo execute "norm! @a" | update
